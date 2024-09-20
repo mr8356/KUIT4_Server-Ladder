@@ -7,6 +7,9 @@ public class Ladder {
         rows = new int[row.getNaturalNumber()+1][numberOfPerson.getNaturalNumber()+1];
     }
 
+    /*
+    * 연속 사다리는 존재하지 않고, 만약에 1과 3을 잇는 사다리가 존재하면 1과 3에서만 이동할수 있는 '통로'가 있다고 가정합니다.
+    * */
     public int drawLine(Position pos1 , Position pos2) {
         if(pos1.getRow() != pos2.getRow()) {
             throw new IllegalArgumentException("Positions do not match");
@@ -20,6 +23,9 @@ public class Ladder {
 
     public int run(NaturalNumber i) {
         int currentCol = i.getNaturalNumber();
+        if (currentCol > this.rows[0].length) {
+            throw new IllegalArgumentException("Column out of bounds");
+        }
         for (int j = 1; j < rows.length; j++) {
             currentCol += rows[j][currentCol];
         }

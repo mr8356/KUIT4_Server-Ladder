@@ -6,13 +6,13 @@ import static org.assertj.core.api.Assertions.*;
 
 class LadderTest {
     @Test
-    public void createLadder() {
+    public void createLadder() throws NaturalNumberException {
         Ladder ladder = new Ladder(NaturalNumber.from(1), NaturalNumber.from(1));
         assertThat(ladder.getDistance(new Position(NaturalNumber.from(1), NaturalNumber.from(1)))).isEqualTo(0);
     }
 
     @Test
-    public void drawLadder() {
+    public void drawLadder() throws NaturalNumberException {
         // given
         Ladder ladder = new Ladder(NaturalNumber.from(4), NaturalNumber.from(4));
         Position pos1 = new Position(NaturalNumber.from(1),NaturalNumber.from(1));
@@ -28,7 +28,7 @@ class LadderTest {
     }
 
     @Test
-    public void runLadderEx1(){
+    public void runLadderEx1() throws NaturalNumberException {
         // given
         Ladder ladder = new Ladder(NaturalNumber.from(3), NaturalNumber.from(3));
 
@@ -39,7 +39,7 @@ class LadderTest {
     }
 
     @Test
-    public void runLadderEx2(){
+    public void runLadderEx2() throws NaturalNumberException {
         // given
         Ladder ladder = new Ladder(NaturalNumber.from(3), NaturalNumber.from(3));
         Position pos1 = new Position(NaturalNumber.from(1),NaturalNumber.from(1));
