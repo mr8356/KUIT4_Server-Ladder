@@ -28,7 +28,18 @@ class LadderTest {
     }
 
     @Test
-    public void runLadder(){
+    public void runLadderEx1(){
+        // given
+        Ladder ladder = new Ladder(NaturalNumber.from(3), NaturalNumber.from(3));
+
+        assertThat(ladder.run(NaturalNumber.from(1))).isEqualTo(1);
+        assertThat(ladder.run(NaturalNumber.from(2))).isEqualTo(2);
+        assertThat(ladder.run(NaturalNumber.from(3))).isEqualTo(3);
+
+    }
+
+    @Test
+    public void runLadderEx2(){
         // given
         Ladder ladder = new Ladder(NaturalNumber.from(3), NaturalNumber.from(3));
         Position pos1 = new Position(NaturalNumber.from(1),NaturalNumber.from(1));
